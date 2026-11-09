@@ -20,7 +20,7 @@ function processData(input: string | number | AdminUser | { status: string }): s
     let result: string = input.manageSystem();
     return result;
   }
-  if ("status" in input) {
+  if (typeof input === "object" && input !== null && "status" in input) {
     let statusValue: string = input.status;
     return statusValue;
   }
